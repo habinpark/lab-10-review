@@ -23,7 +23,7 @@
 
 
         console.log(myArray)
-        graph(myArray);
+        graph(sales);
 
         function graph(list) {
             var canvas = document.getElementById("myCanvas");
@@ -34,7 +34,7 @@
             var inputMax = Math.max(...list);
 
             var scale = (num, in_min, in_max, out_min, out_max) => {
-                return (num - in_min) * (out_max - out_min) / (in_max - in_min) * out_min;
+                return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
             }
 
             var myList = list.map(n => scale(n, inputMin, inputMax, 0, height));
