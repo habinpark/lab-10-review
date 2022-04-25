@@ -18,12 +18,30 @@
         const pi = Math.PI;
 
         for (let i = 0; i < 100; i++) {
-            myArray.push((1.33 * i) + 0);
+            //myArray.push((1.33 * i) + 0);
+            //myArray.push((1.06 * i) +10);
+            //myArray.push(Math.pow(i,2));
+            //myArray.push(Math.cos(i));
+            //myArray.push(Math.cos(Math.pow(i,.5)));
+            //myArray.push(Math.pow(i,7));
+            //myArray.push(Math.sin(i*.05));
+            //myArray.push(Math.random());
+            //myArray.push(Math.log10(i +1)*(Math.random()));
+            myArray.push(Math.tan(i))
         }
-
-
-        console.log(myArray)
-        graph(sales);
+        for (let i = 0; i < 200; i++) {
+            if(i%3 == 0 && i%5 == 0){
+                myArray.push(200);
+            }else if(i%3 == 0){
+                myArray.push(100);
+            }else if(i%5 == 0){
+                myArray.push(50)
+            }else{
+                myArray.push(0)
+            }
+        }
+        graph(myArray);
+        //graph(sales);
 
         function graph(list) {
             var canvas = document.getElementById("myCanvas");
